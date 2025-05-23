@@ -161,6 +161,11 @@ const Index = () => {
                       <span className="font-medium">Постамат Яндекс.Маркета: 2.000₽</span>
                       <Badge variant="secondary">2 м²</Badge>
                     </div>
+                    <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-100">
+                      <p className="text-gray-700">
+                        <span className="font-bold">Расчет прибыли:</span> (85.000₽ + 45.000₽ + 35.000₽ + 2.000₽) - налоги и мелкие операционные издержки = 41.900₽ <span className="text-sm text-gray-500">(подробнее могу рассказать на консультации)</span>
+                      </p>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
