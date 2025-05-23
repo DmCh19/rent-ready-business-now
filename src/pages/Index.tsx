@@ -1,12 +1,12 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Building2, TrendingUp, Clock, DollarSign, Shield, Users, Calculator, Phone, Mail, MapPin, Star } from "lucide-react";
+import { Building2, TrendingUp, Clock, DollarSign, Shield, Users, Calculator, Phone, Mail, MapPin, Star, CheckCircle, FileCheck, ClipboardList, BookOpen, UserCheck } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -274,6 +274,208 @@ const Index = () => {
                 <h3 className="font-bold mb-2">Долгосрочная аренда</h3>
                 <p className="text-gray-600">Все арендаторы заходят надолго</p>
               </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Management Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+            🧠 Управление полностью делегируемо
+          </h2>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <Card className="hover:shadow-xl transition-shadow">
+              <CardContent className="p-6">
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <CheckCircle className="w-6 h-6 text-green-500 mt-1 shrink-0" />
+                    <p className="text-gray-700">Все процессы автоматизированы</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <FileCheck className="w-6 h-6 text-green-500 mt-1 shrink-0" />
+                    <p className="text-gray-700">Есть таблица для расчёта коммуналки — передаю вам</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <ClipboardList className="w-6 h-6 text-green-500 mt-1 shrink-0" />
+                    <p className="text-gray-700">Выставление счетов — 1 раз в месяц (можно делегировать)</p>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <UserCheck className="w-6 h-6 text-green-500 mt-1 shrink-0" />
+                    <p className="text-gray-700">Арендаторы отвечают за всё в помещении, даже за перегоревшие лампочки</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+            
+            <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 hover:shadow-xl transition-shadow">
+              <CardContent className="p-8">
+                <h3 className="text-xl font-bold mb-4 text-blue-800">🔁 Быстрая сделка — всё занимает до недели</h3>
+                <ol className="space-y-4">
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">1</div>
+                    <p>Экскурсия на объект</p>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">2</div>
+                    <p>Согласование условий</p>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">3</div>
+                    <p>Переоформление договоров</p>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">4</div>
+                    <p>Передача денег</p>
+                  </li>
+                  <li className="flex items-center gap-3">
+                    <div className="w-6 h-6 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold">5</div>
+                    <p>Получение объекта в управление</p>
+                  </li>
+                </ol>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Bonuses Section */}
+      <section className="py-16 bg-gradient-to-r from-green-50 to-emerald-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+            🎁 Бонусы для покупателя
+          </h2>
+          <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+            <div className="bg-white rounded-lg p-6 flex items-start gap-4 shadow-md hover:shadow-lg transition-shadow">
+              <CheckCircle className="w-8 h-8 text-green-500 shrink-0" />
+              <div>
+                <h3 className="font-semibold mb-1">Сопровождение</h3>
+                <p className="text-gray-600">Сопровождаю после сделки, помогаю в процессе</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 flex items-start gap-4 shadow-md hover:shadow-lg transition-shadow">
+              <FileCheck className="w-8 h-8 text-green-500 shrink-0" />
+              <div>
+                <h3 className="font-semibold mb-1">Документы</h3>
+                <p className="text-gray-600">Все таблицы и документы для работы</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 flex items-start gap-4 shadow-md hover:shadow-lg transition-shadow">
+              <Shield className="w-8 h-8 text-green-500 shrink-0" />
+              <div>
+                <h3 className="font-semibold mb-1">Юридическая поддержка</h3>
+                <p className="text-gray-600">Контакты проверенного юриста</p>
+              </div>
+            </div>
+            
+            <div className="bg-white rounded-lg p-6 flex items-start gap-4 shadow-md hover:shadow-lg transition-shadow">
+              <BookOpen className="w-8 h-8 text-green-500 shrink-0" />
+              <div>
+                <h3 className="font-semibold mb-1">Обучающие материалы</h3>
+                <p className="text-gray-600">Если захотите собирать такие объекты сами</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Me Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+                  🧑‍💼 Кто я?
+                </h2>
+                <div className="space-y-4 text-gray-700">
+                  <p className="text-lg">
+                    Меня зовут Дмитрий, я не риелтор, а предприниматель.
+                  </p>
+                  <p>
+                    За последние месяцы я собрал 2 объекта, которые приносят мне пассивный доход. Моя цель — создать 1 000 000 ₽ пассивного дохода в месяц.
+                  </p>
+                  <p>
+                    Сейчас я продаю объекты в Самаре, чтобы масштабироваться в Москве.
+                    У меня есть партнёр Иван, мы командные игроки, работаем над этим проектом системно и профессионально.
+                  </p>
+                  <div className="bg-blue-50 rounded-lg p-4 border border-blue-100">
+                    <p className="flex items-center gap-2">
+                      <TrendingUp className="w-5 h-5 text-blue-600" />
+                      <span className="font-medium">Если вам интересно не просто вложение, а участие в таких проектах как инвестор — напишите!</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-gray-100 rounded-lg p-4 aspect-square flex items-center justify-center">
+                <div className="text-center text-gray-500">
+                  <p className="font-medium">Здесь будет фото с партнёром</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Second Object Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
+            🏠 Второй объект тоже в продаже
+          </h2>
+          
+          <div className="max-w-5xl mx-auto">
+            <Card className="overflow-hidden">
+              <div className="grid md:grid-cols-2">
+                <div className="bg-gray-100 p-4 aspect-video flex items-center justify-center">
+                  <div className="text-center text-gray-500">
+                    <p className="font-medium">Здесь будет фото второго объекта</p>
+                  </div>
+                </div>
+                <CardContent className="p-8">
+                  <div className="space-y-6">
+                    <div className="flex items-center gap-3">
+                      <MapPin className="w-5 h-5 text-blue-600" />
+                      <span className="text-gray-800 font-medium">Ул. Ленинградская, 207 м²</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Building2 className="w-5 h-5 text-purple-600" />
+                      <span className="text-gray-800">Сданы под магазин одежды и ПВЗ Wildberries</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <DollarSign className="w-5 h-5 text-green-600" />
+                      <span className="text-gray-800 font-bold">Чистая прибыль: 39 000 ₽/мес</span>
+                    </div>
+                    
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <Button className="mt-4 w-full bg-blue-600 hover:bg-blue-700">
+                          Узнать подробности
+                        </Button>
+                      </DialogTrigger>
+                      <DialogContent className="max-w-md">
+                        <DialogHeader>
+                          <DialogTitle>Узнать о втором объекте</DialogTitle>
+                        </DialogHeader>
+                        <form onSubmit={handleSubmit} className="space-y-4 mt-4">
+                          <Input 
+                            placeholder="Имя" 
+                            required
+                          />
+                          <Input 
+                            placeholder="Телефон" 
+                            required
+                          />
+                          <Button type="submit" className="w-full">Запросить информацию</Button>
+                        </form>
+                      </DialogContent>
+                    </Dialog>
+                  </div>
+                </CardContent>
+              </div>
             </Card>
           </div>
         </div>
