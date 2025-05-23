@@ -4,12 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { Building2, TrendingUp, Clock, DollarSign, Shield, Users, Calculator, Phone, Mail, MapPin, Star, CheckCircle, FileCheck, ClipboardList, BookOpen, UserCheck, Images } from "lucide-react";
+import { Building2, TrendingUp, Clock, DollarSign, Shield, Users, Calculator, Phone, Mail, MapPin, Star, CheckCircle, FileCheck, ClipboardList, BookOpen, UserCheck } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -76,45 +74,6 @@ const Index = () => {
             <Button size="lg" className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 text-lg">
               Узнать подробности
             </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Project Photos Carousel */}
-      <section className="py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-gray-900">
-              📸 Общие фото проекта
-            </h2>
-            <Card className="border-none shadow-xl overflow-hidden">
-              <CardContent className="p-6">
-                <Carousel className="w-full">
-                  <CarouselContent>
-                    {[1, 2, 3, 4].map((index) => (
-                      <CarouselItem key={index}>
-                        <div className="p-1">
-                          <Card className="border-none overflow-hidden">
-                            <CardContent className="p-0">
-                              <AspectRatio ratio={16/9} className="bg-gray-100 flex items-center justify-center">
-                                <div className="flex flex-col items-center justify-center text-center gap-2">
-                                  <Images className="w-12 h-12 text-blue-600" />
-                                  <p className="text-sm text-gray-500">Фото объекта {index}</p>
-                                </div>
-                              </AspectRatio>
-                            </CardContent>
-                          </Card>
-                        </div>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <div className="mt-4 flex items-center justify-center gap-2">
-                    <CarouselPrevious className="relative inset-auto left-0 right-0 top-0 translate-y-0" />
-                    <CarouselNext className="relative inset-auto left-0 right-0 top-0 translate-y-0" />
-                  </div>
-                </Carousel>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -452,9 +411,10 @@ const Index = () => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gray-100 rounded-lg p-4 aspect-square flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <p className="font-medium">Здесь будет фото с партнёром</p>
+              <div className="bg-blue-50 rounded-lg p-8">
+                <div className="text-center text-blue-800">
+                  <p className="text-xl font-medium mb-2">Дмитрий и Иван</p>
+                  <p className="text-gray-600">Предприниматели, создаем объекты с пассивным доходом</p>
                 </div>
               </div>
             </div>
@@ -472,10 +432,9 @@ const Index = () => {
           <div className="max-w-5xl mx-auto">
             <Card className="overflow-hidden">
               <div className="grid md:grid-cols-2">
-                <div className="bg-gray-100 p-4 aspect-video flex items-center justify-center">
-                  <div className="text-center text-gray-500">
-                    <p className="font-medium">Здесь будет фото второго объекта</p>
-                  </div>
+                <div className="bg-blue-100 p-8 flex flex-col justify-center">
+                  <h3 className="text-xl font-bold mb-4 text-blue-800">Ул. Ленинградская</h3>
+                  <p className="text-gray-600 mb-4">Готовый бизнес с пассивным доходом</p>
                 </div>
                 <CardContent className="p-8">
                   <div className="space-y-6">
