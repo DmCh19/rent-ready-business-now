@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -8,7 +7,6 @@ import { Building2, TrendingUp, Clock, DollarSign, Shield, Users, Calculator, Ph
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-
 const Index = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,28 +14,49 @@ const Index = () => {
     email: "",
     message: ""
   });
-  
-  const { toast } = useToast();
-
+  const {
+    toast
+  } = useToast();
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
       title: "Заявка отправлена!",
-      description: "Мы свяжемся с вами в ближайшее время.",
+      description: "Мы свяжемся с вами в ближайшее время."
     });
-    setFormData({ name: "", phone: "", email: "", message: "" });
+    setFormData({
+      name: "",
+      phone: "",
+      email: "",
+      message: ""
+    });
   };
-
-  const revenueData = [
-    { year: 1, monthly: "41 900 ₽", yearly: "502 800 ₽", total: "502 800 ₽" },
-    { year: 2, monthly: "46 090 ₽", yearly: "553 080 ₽", total: "1 055 880 ₽" },
-    { year: 3, monthly: "50 699 ₽", yearly: "608 388 ₽", total: "1 664 268 ₽" },
-    { year: 4, monthly: "55 769 ₽", yearly: "669 228 ₽", total: "2 333 496 ₽" },
-    { year: 5, monthly: "61 346 ₽", yearly: "736 152 ₽", total: "3 069 648 ₽" }
-  ];
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+  const revenueData = [{
+    year: 1,
+    monthly: "41 900 ₽",
+    yearly: "502 800 ₽",
+    total: "502 800 ₽"
+  }, {
+    year: 2,
+    monthly: "46 090 ₽",
+    yearly: "553 080 ₽",
+    total: "1 055 880 ₽"
+  }, {
+    year: 3,
+    monthly: "50 699 ₽",
+    yearly: "608 388 ₽",
+    total: "1 664 268 ₽"
+  }, {
+    year: 4,
+    monthly: "55 769 ₽",
+    yearly: "669 228 ₽",
+    total: "2 333 496 ₽"
+  }, {
+    year: 5,
+    monthly: "61 346 ₽",
+    yearly: "736 152 ₽",
+    total: "3 069 648 ₽"
+  }];
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       {/* Hero Section */}
       <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 text-white py-20">
         <div className="container mx-auto px-4">
@@ -127,19 +146,19 @@ const Index = () => {
                   <h3 className="text-xl font-bold mb-4">Арендаторы</h3>
                   <div className="space-y-3">
                     <div className="flex justify-between items-center p-3 bg-purple-50 rounded-lg">
-                      <span className="font-medium">Wildberries</span>
+                      <span className="font-medium">Wildberries: 85.000₽</span>
                       <Badge variant="secondary">62.8 м²</Badge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-amber-50 rounded-lg">
-                      <span className="font-medium">Пивной магазин</span>
+                      <span className="font-medium">Пивной магазин: 45.000₽</span>
                       <Badge variant="secondary">29 м²</Badge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-orange-50 rounded-lg">
-                      <span className="font-medium">Кофейня</span>
+                      <span className="font-medium">Кофейня: 35.000₽</span>
                       <Badge variant="secondary">38 м²</Badge>
                     </div>
                     <div className="flex justify-between items-center p-3 bg-blue-50 rounded-lg">
-                      <span className="font-medium">Постамат Яндекс.Маркета</span>
+                      <span className="font-medium">Постамат Яндекс.Маркета: 2.000₽</span>
                       <Badge variant="secondary">2 м²</Badge>
                     </div>
                   </div>
@@ -200,14 +219,12 @@ const Index = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {revenueData.map((row) => (
-                        <tr key={row.year} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
+                      {revenueData.map(row => <tr key={row.year} className="border-b border-gray-100 hover:bg-gray-50 transition-colors">
                           <td className="py-4 px-4 font-semibold text-blue-600">{row.year}</td>
                           <td className="py-4 px-4 text-green-600 font-medium">{row.monthly}</td>
                           <td className="py-4 px-4 text-green-600 font-medium">{row.yearly}</td>
                           <td className="py-4 px-4 text-green-700 font-bold">{row.total}</td>
-                        </tr>
-                      ))}
+                        </tr>)}
                     </tbody>
                   </table>
                 </div>
@@ -462,14 +479,8 @@ const Index = () => {
                           <DialogTitle>Узнать о втором объекте</DialogTitle>
                         </DialogHeader>
                         <form onSubmit={handleSubmit} className="space-y-4 mt-4">
-                          <Input 
-                            placeholder="Имя" 
-                            required
-                          />
-                          <Input 
-                            placeholder="Телефон" 
-                            required
-                          />
+                          <Input placeholder="Имя" required />
+                          <Input placeholder="Телефон" required />
                           <Button type="submit" className="w-full">Запросить информацию</Button>
                         </form>
                       </DialogContent>
@@ -498,41 +509,29 @@ const Index = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
-                      <Input
-                        placeholder="Ваше имя"
-                        value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className="bg-white/20 border-white/30 text-white placeholder:text-purple-200"
-                        required
-                      />
+                      <Input placeholder="Ваше имя" value={formData.name} onChange={e => setFormData({
+                      ...formData,
+                      name: e.target.value
+                    })} className="bg-white/20 border-white/30 text-white placeholder:text-purple-200" required />
                     </div>
                     <div>
-                      <Input
-                        placeholder="Телефон"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                        className="bg-white/20 border-white/30 text-white placeholder:text-purple-200"
-                        required
-                      />
+                      <Input placeholder="Телефон" value={formData.phone} onChange={e => setFormData({
+                      ...formData,
+                      phone: e.target.value
+                    })} className="bg-white/20 border-white/30 text-white placeholder:text-purple-200" required />
                     </div>
                   </div>
                   <div>
-                    <Input
-                      placeholder="Email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({...formData, email: e.target.value})}
-                      className="bg-white/20 border-white/30 text-white placeholder:text-purple-200"
-                      required
-                    />
+                    <Input placeholder="Email" type="email" value={formData.email} onChange={e => setFormData({
+                    ...formData,
+                    email: e.target.value
+                  })} className="bg-white/20 border-white/30 text-white placeholder:text-purple-200" required />
                   </div>
                   <div>
-                    <Textarea
-                      placeholder="Ваш вопрос или комментарий"
-                      value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className="bg-white/20 border-white/30 text-white placeholder:text-purple-200 min-h-24"
-                    />
+                    <Textarea placeholder="Ваш вопрос или комментарий" value={formData.message} onChange={e => setFormData({
+                    ...formData,
+                    message: e.target.value
+                  })} className="bg-white/20 border-white/30 text-white placeholder:text-purple-200 min-h-24" />
                   </div>
                   <Button type="submit" size="lg" className="w-full bg-green-500 hover:bg-green-600 text-white py-4 text-lg">
                     Оставить заявку
@@ -566,8 +565,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
